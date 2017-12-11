@@ -15,16 +15,19 @@ enum methodType {
 }
 
 class NetwordTools: NSObject {
-    func requestNetwordData(URLString : String, method : methodType, parameter : [String : Any]? , finishCallBack : @escaping (_ response : Any) -> ()) {
+    class func requestData(URLString : String, parameter : [String : Any]? , method : methodType, finishCallBack : @escaping (_ response : Any) -> () ) {
         
         let requestMethod = method == .get ? HTTPMethod.get : HTTPMethod.post
         
+        
         Alamofire.request(URLString, method: requestMethod, parameters: parameter).responseJSON { (dataResponse) in
-            guard let result = dataResponse.result.value else {
+            //验证
+            guard let resp = dataResponse.result.value else {
                 return
             }
             
-            finishCallBack(result)
+            finishCallBack(resp)
         }
+        
     }
 }

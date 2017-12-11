@@ -47,7 +47,7 @@ extension MainTabBarController {
 
 //MARK: - 添加子控制器
 extension MainTabBarController {
-    func AddOtherChildViewController(childVC : UIViewController, title : String, imageName : String, selectImageName : String ) {
+    private func AddOtherChildViewController(childVC : UIViewController, title : String, imageName : String, selectImageName : String ) {
         
         childVC.title = title
         childVC.tabBarItem.image = UIImage.init(named: imageName)

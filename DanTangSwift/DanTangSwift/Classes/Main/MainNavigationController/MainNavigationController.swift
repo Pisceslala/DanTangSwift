@@ -30,7 +30,7 @@ extension MainNavigationController {
 
 //MARK: - 初始化
 extension MainNavigationController {
-    func configView() {
+    private func configView() {
         navigationBar.barTintColor = UIColor.init(red: 245.0/255, green: 80.0/255, blue: 83.0/255, alpha: 1)
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
