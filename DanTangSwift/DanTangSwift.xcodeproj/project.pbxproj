@@ -27,6 +27,7 @@
 		23CF01491FDF942800180934 /* ChannelsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF01481FDF942800180934 /* ChannelsListModel.swift */; };
 		23CF014C1FDFA8E000180934 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF014A1FDFA8E000180934 /* ItemsCell.swift */; };
 		23CF014D1FDFA8E000180934 /* ItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CF014B1FDFA8E000180934 /* ItemsCell.xib */; };
+		23CF014F1FDFC46700180934 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF014E1FDFC46700180934 /* HomeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		23CF01481FDF942800180934 /* ChannelsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsListModel.swift; sourceTree = "<group>"; };
 		23CF014A1FDFA8E000180934 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
 		23CF014B1FDFA8E000180934 /* ItemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsCell.xib; sourceTree = "<group>"; };
+		23CF014E1FDFC46700180934 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		681AE39EBD8E32D42996EF62 /* Pods_DanTangSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanTangSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2162314D136039AFEE7448E /* Pods-DanTangSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanTangSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DanTangSwift/Pods-DanTangSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 			children = (
 				2351851A1FDE45800019B2C4 /* HomeViewController.swift */,
 				23CF01461FDF8B7A00180934 /* HomeChannelsViewController.swift */,
+				23CF014E1FDFC46700180934 /* HomeDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				235185211FDE45AF0019B2C4 /* ProductViewController.swift in Sources */,
 				235185341FDE78190019B2C4 /* ChannelsModel.swift in Sources */,
 				2351850D1FDE43DA0019B2C4 /* MainTabBarController.swift in Sources */,
+				23CF014F1FDFC46700180934 /* HomeDetailViewController.swift in Sources */,
 				23CF014C1FDFA8E000180934 /* ItemsCell.swift in Sources */,
 				2351852D1FDE68040019B2C4 /* UIViewExtentsion.swift in Sources */,
 				2351851D1FDE45930019B2C4 /* PersonageViewController.swift in Sources */,

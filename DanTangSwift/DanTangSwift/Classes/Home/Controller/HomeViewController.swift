@@ -12,23 +12,18 @@ class HomeViewController: UIViewController {
    
     lazy var titleArray : [ChannelsModel] = [ChannelsModel]()
     
-    lazy var titleView: TitileView = {
+    lazy var titleView: TitileView = {[weak self] in
         let barHeight = (navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height
-        
         let titleView = TitileView(frame: CGRect(x: 0, y: barHeight, width: SSScreenW, height: 36))
-        
         titleView.backgroundColor  = rgba(240, 240, 240, 1)
-        
         titleView.delegate = self
-        
         return titleView
     }()
     
-    lazy var scrollView: UIScrollView = {
+    lazy var scrollView: UIScrollView = {[weak self] in
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: titleView.frame.maxY, width: SSScreenW, height: SSScreenH - titleView.frame.maxY - (tabBarController?.tabBar.frame.size.height)!))
         scrollView.contentSize = CGSize(width: Int(SSScreenW) * titleArray.count, height: 0)
         scrollView.delegate = self;
-        scrollView.backgroundColor = UIColor.orange
         scrollView.isPagingEnabled = true
         return scrollView
     }()
@@ -43,8 +38,9 @@ class HomeViewController: UIViewController {
     }
 }
 
-//MARK: - 初始化
 
+
+//MARK: - 初始化
 extension HomeViewController {
     private func configView() {
         view.backgroundColor = UIColor.white
@@ -55,8 +51,9 @@ extension HomeViewController {
     }
 }
 
-//MARK: - 网络请求
 
+
+//MARK: - 网络请求
 extension HomeViewController {
     
     private func loadTitleViewInfo() {
@@ -85,14 +82,10 @@ extension HomeViewController {
     }
 }
 
-//MARK: - 监听滚动
 
-extension HomeViewController : UIScrollViewDelegate, TitleViewDelegate {
-    func titleViewDidClickTitleBtn(index : Int) {
-        var offset = self.scrollView.contentOffset
-        offset.x = CGFloat(index) * SSScreenW
-        self.scrollView.setContentOffset(offset, animated: true)
-    }
+
+//MARK: - 监听滚动(加载页面)
+extension HomeViewController : UIScrollViewDelegate {
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         let index : Int = Int(scrollView.contentOffset.x) / Int(SSScreenW)
@@ -101,7 +94,7 @@ extension HomeViewController : UIScrollViewDelegate, TitleViewDelegate {
             return
         }
         willShowVC.view.x = CGFloat(index * Int(SSScreenW));
-        willShowVC.view.y = 0;  
+        willShowVC.view.y = 0;
         willShowVC.view.height = self.view.height;
         scrollView.addSubview(willShowVC.view)
     }
@@ -115,21 +108,29 @@ extension HomeViewController : UIScrollViewDelegate, TitleViewDelegate {
     
 }
 
-//MARK: - 添加子控制器
 
+
+//MARK: - 添加子控制器
 extension HomeViewController {
     private func addChildVCByModel(_ model : ChannelsModel) {
-        let homeChannelVC = HomeChannelsViewController()
+        let homeChannelVC     = HomeChannelsViewController()
         homeChannelVC.titleID = model.id
         self.addChildViewController(homeChannelVC)
     }
 }
 
-//MARK: - 监听点击
 
-extension HomeViewController {
+
+//MARK: - 监听点击
+extension HomeViewController : TitleViewDelegate {
     @objc private func didClickSearchBtn() {
         print("didClickBtn")
+    }
+    
+    func titleViewDidClickTitleBtn(index : Int) {
+        var offset = self.scrollView.contentOffset
+        offset.x   = CGFloat(index) * SSScreenW
+        self.scrollView.setContentOffset(offset, animated: true)
     }
 }
 

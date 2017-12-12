@@ -24,19 +24,30 @@ class ItemsCell: UITableViewCell {
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius  = 8
     }
 
- 
-    @IBAction func didClickLikeBtn(_ sender: Any) {
-        
+    override var frame: CGRect {
+        didSet {
+            var newFrame = frame
+            newFrame.size.width  -= 20
+            newFrame.origin.x    += 10
+            newFrame.size.height -= 10
+            newFrame.origin.y    += 10
+            super.frame = newFrame
+        }
     }
 }
 
 
 extension ItemsCell {
-    
+    @IBAction func didClickLikeBtn(_ sender: Any) {
+        let likeBtn = sender as! UIButton
+        
+        likeBtn.isSelected = !likeBtn.isSelected
+        
+    }
 }

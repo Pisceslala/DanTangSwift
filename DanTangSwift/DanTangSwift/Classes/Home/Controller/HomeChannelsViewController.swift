@@ -11,6 +11,7 @@ import UIKit
 class HomeChannelsViewController: UIViewController {
 
     var dataArray : [ChannelsListModel] = [ChannelsListModel]()
+    var nextURL   : String?
     
     
     var titleID : Int = 0 {
@@ -24,9 +25,10 @@ class HomeChannelsViewController: UIViewController {
         let barHeight = (navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height + 36
         let Height    = SSScreenH - barHeight - (tabBarController?.tabBar.frame.size.height)!
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: SSScreenW, height: Height), style: .plain)
+        tableView.separatorStyle = .none
         tableView.delegate   = self
         tableView.dataSource = self
-        tableView.rowHeight  = 111
+        tableView.rowHeight  = 160
         tableView.register(UINib.init(nibName: "ItemsCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         return tableView
     }()
@@ -48,11 +50,16 @@ extension HomeChannelsViewController : UITableViewDelegate, UITableViewDataSourc
         
         cell.model = self.dataArray[indexPath.row]
         
+        cell.selectionStyle = .none
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let detailVC = HomeDetailViewController()
+        detailVC.itemModel = dataArray[indexPath.row]
+        detailVC.title = "攻略详情"
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
@@ -61,12 +68,13 @@ extension HomeChannelsViewController {
     private func loadHomeDataByTitleId(_ typeID: Int) {
         let url = "\(BaseURL)v1/channels/\(typeID)/items?gender=1&generation=1&limit=20&offset=0"
         NetwordTools.requestData(URLString: url, parameter: nil, method: .get) { (dataResponse:Any) in
+            
             guard let response = dataResponse as? [String : Any] else {return}
-            
-            guard let data = response["data"] as? [String : Any] else {return}
-            
-            guard let items = data["items"] as? [[String : Any]] else {return}
+            guard let data     = response["data"] as? [String : Any] else {return}
+            guard let items    = data["items"] as? [[String : Any]] else {return}
 
+            self.nextURL = data["next_url"] as? String
+            
             for dict in items {
                 self.dataArray.append(ChannelsListModel.init(dict: dict))
             }
