@@ -28,6 +28,9 @@
 		23CF014C1FDFA8E000180934 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF014A1FDFA8E000180934 /* ItemsCell.swift */; };
 		23CF014D1FDFA8E000180934 /* ItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CF014B1FDFA8E000180934 /* ItemsCell.xib */; };
 		23CF014F1FDFC46700180934 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF014E1FDFC46700180934 /* HomeDetailViewController.swift */; };
+		23CF01521FDFDA9000180934 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF01501FDFDA9000180934 /* ProductCell.swift */; };
+		23CF01531FDFDA9000180934 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23CF01511FDFDA9000180934 /* ProductCell.xib */; };
+		23CF01551FDFDCB100180934 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF01541FDFDCB100180934 /* ProductModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		23CF014A1FDFA8E000180934 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
 		23CF014B1FDFA8E000180934 /* ItemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsCell.xib; sourceTree = "<group>"; };
 		23CF014E1FDFC46700180934 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		23CF01501FDFDA9000180934 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		23CF01511FDFDA9000180934 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		23CF01541FDFDCB100180934 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		681AE39EBD8E32D42996EF62 /* Pods_DanTangSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanTangSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2162314D136039AFEE7448E /* Pods-DanTangSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanTangSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DanTangSwift/Pods-DanTangSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +160,8 @@
 		235185171FDE45590019B2C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				23CF01501FDFDA9000180934 /* ProductCell.swift */,
+				23CF01511FDFDA9000180934 /* ProductCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 		235185181FDE45610019B2C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23CF01541FDFDCB100180934 /* ProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23C81EB11FDE3FEC008B0959 /* LaunchScreen.storyboard in Resources */,
+				23CF01531FDFDA9000180934 /* ProductCell.xib in Resources */,
 				23C81EAE1FDE3FEC008B0959 /* Assets.xcassets in Resources */,
 				23CF014D1FDFA8E000180934 /* ItemsCell.xib in Resources */,
 			);
@@ -466,11 +476,13 @@
 				235185321FDE71620019B2C4 /* constFile.swift in Sources */,
 				2351851F1FDE45A10019B2C4 /* ClassifyViewController.swift in Sources */,
 				235185211FDE45AF0019B2C4 /* ProductViewController.swift in Sources */,
+				23CF01551FDFDCB100180934 /* ProductModel.swift in Sources */,
 				235185341FDE78190019B2C4 /* ChannelsModel.swift in Sources */,
 				2351850D1FDE43DA0019B2C4 /* MainTabBarController.swift in Sources */,
 				23CF014F1FDFC46700180934 /* HomeDetailViewController.swift in Sources */,
 				23CF014C1FDFA8E000180934 /* ItemsCell.swift in Sources */,
 				2351852D1FDE68040019B2C4 /* UIViewExtentsion.swift in Sources */,
+				23CF01521FDFDA9000180934 /* ProductCell.swift in Sources */,
 				2351851D1FDE45930019B2C4 /* PersonageViewController.swift in Sources */,
 				2351851B1FDE45800019B2C4 /* HomeViewController.swift in Sources */,
 			);
