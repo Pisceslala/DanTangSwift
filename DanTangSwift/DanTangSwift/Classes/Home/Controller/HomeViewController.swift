@@ -9,61 +9,56 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    var selectedBtn = UIButton()
    
-    lazy var titleArray : [channelsModel] = [channelsModel]()
+    lazy var titleArray : [ChannelsModel] = [ChannelsModel]()
     
-    lazy var titleView: UIView = {
+    lazy var titleView: TitileView = {
         let barHeight = (navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height
-        let titleView = UIView(frame: CGRect(x: 0, y: barHeight, width: SSScreenW, height: 36))
-        titleView.backgroundColor = UIColor.init(red: 240.0 / 250.0, green: 240.0 / 250.0, blue: 240.0 / 250.0, alpha: 1)
+        
+        let titleView = TitileView(frame: CGRect(x: 0, y: barHeight, width: SSScreenW, height: 36))
+        
+        titleView.backgroundColor  = rgba(240, 240, 240, 1)
+        
+        titleView.delegate = self
+        
         return titleView
+    }()
+    
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: titleView.frame.maxY, width: SSScreenW, height: SSScreenH - titleView.frame.maxY - (tabBarController?.tabBar.frame.size.height)!))
+        scrollView.contentSize = CGSize(width: Int(SSScreenW) * titleArray.count, height: 0)
+        scrollView.delegate = self;
+        scrollView.backgroundColor = UIColor.orange
+        scrollView.isPagingEnabled = true
+        return scrollView
     }()
 
     //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        configView()
-        configTitleButton()
-        loadTitleViewInfo()
+        
+        configView() //初始化
+        
+        loadTitleViewInfo() //获取title数据
     }
 }
 
 //MARK: - 初始化
+
 extension HomeViewController {
     private func configView() {
         view.backgroundColor = UIColor.white
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "Feed_SearchBtn_18x18_"), style: .plain, target: self, action: #selector(didClickSearchBtn))
+        
         view.addSubview(titleView)
-        
-    }
-    
-    private func configTitleButton() {
-        
-        let w = SSScreenW / CGFloat(titleArray.count)
-        let h = titleView.height - 2
-        for (index,value) in titleArray.enumerated() {
-            let x : CGFloat = CGFloat(index) * w
-            let titleBtn    = UIButton(frame: CGRect(x: x, y: 0, width: w, height: h))
-            titleBtn.tag    = index
-            titleBtn.setTitle(value.name, for: .normal)
-            titleBtn.setTitleColor(UIColor.gray, for: .normal)
-            titleBtn.setTitleColor(UIColor.init(red: 245.0/255, green: 80.0/255, blue: 83.0/255, alpha: 1), for: .disabled)
-            titleBtn.titleLabel?.textAlignment = .center
-            titleBtn.titleLabel?.font = kFont14
-            titleBtn.addTarget(self, action: #selector(didClickTitleBtn(titleBtn:)), for: .touchUpInside)
-            titleView.addSubview(titleBtn)
-            if index == 0 {
-                titleBtn.isEnabled = false
-                self.selectedBtn   = titleBtn
-            }
-        }
     }
 }
 
 //MARK: - 网络请求
+
 extension HomeViewController {
+    
     private func loadTitleViewInfo() {
         
         let url = BaseURL + TitleURL
@@ -74,25 +69,67 @@ extension HomeViewController {
             guard let channels = data["channels"] as? [[String : Any]] else {return}
             
             for dict in channels {
-                self.titleArray.append(channelsModel(dict: dict))
+                self.titleArray.append(ChannelsModel(dict: dict))
             }
             
-            //创建按钮
-            self.configTitleButton()
+            self.titleView.titleArray = self.titleArray
+            
+            for (_, value) in self.titleArray.enumerated() {
+                self.addChildVCByModel(value)
+            }
+            
+            self.view.addSubview(self.scrollView)
+            
+            self.scrollViewDidEndScrollingAnimation(self.scrollView)
         }
     }
 }
 
+//MARK: - 监听滚动
+
+extension HomeViewController : UIScrollViewDelegate, TitleViewDelegate {
+    func titleViewDidClickTitleBtn(index : Int) {
+        var offset = self.scrollView.contentOffset
+        offset.x = CGFloat(index) * SSScreenW
+        self.scrollView.setContentOffset(offset, animated: true)
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let index : Int = Int(scrollView.contentOffset.x) / Int(SSScreenW)
+        let willShowVC : HomeChannelsViewController = self.childViewControllers[index] as! HomeChannelsViewController;
+        if willShowVC.isViewLoaded {
+            return
+        }
+        willShowVC.view.x = CGFloat(index * Int(SSScreenW));
+        willShowVC.view.y = 0;  
+        willShowVC.view.height = self.view.height;
+        scrollView.addSubview(willShowVC.view)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.scrollViewDidEndScrollingAnimation(self.scrollView)
+        let index : Int = Int(scrollView.contentOffset.x) / Int(SSScreenW)
+        let btn = titleView.subviews[index + 1] as! UIButton
+        titleView.didClickTitleBtn(btn: btn)
+    }
+    
+}
+
+//MARK: - 添加子控制器
+
+extension HomeViewController {
+    private func addChildVCByModel(_ model : ChannelsModel) {
+        let homeChannelVC = HomeChannelsViewController()
+        homeChannelVC.titleID = model.id
+        self.addChildViewController(homeChannelVC)
+    }
+}
+
 //MARK: - 监听点击
+
 extension HomeViewController {
     @objc private func didClickSearchBtn() {
         print("didClickBtn")
-    }
-    
-    @objc private func didClickTitleBtn(titleBtn : UIButton) {
-        titleBtn.isEnabled = false
-        self.selectedBtn.isEnabled = true
-        self.selectedBtn = titleBtn
     }
 }
 

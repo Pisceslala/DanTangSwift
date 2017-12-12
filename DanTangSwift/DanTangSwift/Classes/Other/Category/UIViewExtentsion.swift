@@ -11,73 +11,73 @@ import UIKit
 extension UIView {
     public var x : CGFloat {
         get {
-            return self.frame.origin.x
+            return frame.origin.x
         }
         
-        set {
-            var frame = self.frame
-            frame.origin.x = x
-            self.frame = frame
+        set(newVal) {
+            var newFrame : CGRect = frame
+            newFrame.origin.x = newVal
+            frame = newFrame
         }
     }
     
     public var y : CGFloat {
         get {
-            return self.frame.origin.y
+            return frame.origin.y
         }
         
-        set {
-            var frame = self.frame
-            frame.origin.y = y
-            self.frame = frame
+        set(newVal) {
+            var newFrame : CGRect = frame
+            newFrame.origin.y = y
+            frame = newFrame
         }
     }
     
     public var height : CGFloat {
         get {
-            return self.frame.size.height
+            return frame.size.height
         }
         
-        set {
-            var frame = self.frame
-            frame.size.height = height
-            self.frame = frame
+        set(newVal) {
+            var newFrame : CGRect = frame
+            newFrame.size.height = newVal
+            frame = newFrame
         }
     }
     
     public var width: CGFloat {
         get {
-            return self.frame.size.width
+            return frame.size.width
         }
         
-        set {
-            var frame = self.frame
-            frame.size.width = width
-            self.frame = frame
+        set(newVal) {
+            var newFrame : CGRect = frame
+            newFrame.size.width = newVal
+            frame = newFrame
         }
     }
     
     public var centerX: CGFloat {
         get {
-            return self.center.x
+            return center.x
         }
         
-        set {
-            var center : CGPoint = self.center
-            center.x = centerX
-            self.center = center
+        set(newVal) {
+            var newCenter : CGPoint = center
+            newCenter.x = newVal
+            center = newCenter
         }
     }
     
     public var centerY: CGFloat {
         get {
-            return self.center.y
+            return center.y
         }
         
-        set {
-            var center : CGPoint = self.center
-            center.y = centerY
-            self.center = center
+        set(newVal) {
+            var newCenter : CGPoint = center
+            newCenter.y = newVal
+            center = newCenter
         }
     }  
 }
