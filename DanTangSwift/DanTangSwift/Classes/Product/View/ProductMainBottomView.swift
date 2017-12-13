@@ -11,15 +11,18 @@ import UIKit
 class ProductMainBottomView: UIView {
     
     var model : ProductModel? {
-        didSet {
+        didSet(newValue) {
             guard let proID = model?.id else {return}
             loadWebDataByProductID(proID)
             loadCommentDataByProductID(proID)
         }
     }
     
+    var commentArray : [String] = [String]()
     
-    lazy var choseView: ProductBottomView = {
+    
+    
+    lazy var choseView: ProductBottomView = {[weak self] in
         let choseView = ProductBottomView.showProductBottomView()
         choseView?.frame = CGRect(x: 0, y: 0, width: SSScreenW, height: 35)
         return choseView!
@@ -44,6 +47,7 @@ class ProductMainBottomView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,8 +77,7 @@ extension ProductMainBottomView {
             
             guard let commentCount = data["comments_count"] as? Int else {return}
             let str = "评论(\(commentCount))"
-            self.choseView.commentBtn.setTitle(str, for: .normal)
-            print((self.choseView.commentBtn.titleLabel?.text)!)
+            self.choseView.commentBtn!.setTitle(str, for: .normal)
         }
     }
     

@@ -21,8 +21,6 @@ class ProductBottomView: UIView {
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 0.5
     }
-    
-    
 }
 
 extension ProductBottomView {

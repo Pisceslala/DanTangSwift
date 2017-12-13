@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A675DE6DA492737EAE03081 /* Pods_DanTangSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681AE39EBD8E32D42996EF62 /* Pods_DanTangSwift.framework */; };
+		232C35481FE131F100EE31C3 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C35471FE131F100EE31C3 /* CommentModel.swift */; };
 		2351850D1FDE43DA0019B2C4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351850C1FDE43DA0019B2C4 /* MainTabBarController.swift */; };
 		2351851B1FDE45800019B2C4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351851A1FDE45800019B2C4 /* HomeViewController.swift */; };
 		2351851D1FDE45930019B2C4 /* PersonageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351851C1FDE45930019B2C4 /* PersonageViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2286C8C0DAA8304BFAA93401 /* Pods-DanTangSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanTangSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DanTangSwift/Pods-DanTangSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		232C35471FE131F100EE31C3 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		2351850C1FDE43DA0019B2C4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2351851A1FDE45800019B2C4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2351851C1FDE45930019B2C4 /* PersonageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonageViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				23CF01541FDFDCB100180934 /* ProductModel.swift */,
+				232C35471FE131F100EE31C3 /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				235185281FDE5F910019B2C4 /* MainNavigationController.swift in Sources */,
+				232C35481FE131F100EE31C3 /* CommentModel.swift in Sources */,
 				23C81EAC1FDE3FEC008B0959 /* DanTangSwift.xcdatamodeld in Sources */,
 				235185251FDE59440019B2C4 /* NetwordTools.swift in Sources */,
 				23C81EA41FDE3FEC008B0959 /* AppDelegate.swift in Sources */,
