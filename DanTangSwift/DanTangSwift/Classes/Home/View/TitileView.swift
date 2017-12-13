@@ -31,6 +31,7 @@ class TitileView: UIView {
 //MARK: - 初始化按钮
 extension TitileView {
     private func configViews() {
+        self.addSubview(lineView)
         let w = SSScreenW / CGFloat(titleArray.count)
         for (index, value) in titleArray.enumerated() {
             let x = CGFloat(index) * w
@@ -63,8 +64,6 @@ extension TitileView {
                 lineView.backgroundColor = UIColor.red
                 
                 lineView.centerX = btn.centerX
-                
-                self.addSubview(lineView)
             }
         }
     }

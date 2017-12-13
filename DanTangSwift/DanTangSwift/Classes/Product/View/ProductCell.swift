@@ -23,7 +23,7 @@ class ProductCell: UICollectionViewCell {
             productImageView.kf.setImage(with: URL.init(string: (model?.cover_image_url)!))
             productTitle.text = model?.name ?? "商品item"
             productPriceLabel.text = model?.price ?? "0.0"
-            likeBtn.setTitle(String(describing: model?.favorites_count), for: .normal)
+            likeBtn.setTitle(String(describing: (model?.favorites_count)!), for: .normal)
         }
     }
     

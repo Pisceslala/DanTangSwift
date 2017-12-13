@@ -49,6 +49,7 @@
                     </button>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ZB2-IB-4K0" secondAttribute="trailing" constant="5" id="82i-v6-5xk"/>
                 <constraint firstAttribute="trailing" secondItem="aaO-X9-4fM" secondAttribute="trailing" id="FrE-NG-N2i"/>
@@ -67,7 +68,7 @@
                 <outlet property="productPriceLabel" destination="Kgr-wM-Ul7" id="PFV-lb-fLq"/>
                 <outlet property="productTitle" destination="ZB2-IB-4K0" id="97h-VU-9PD"/>
             </connections>
-            <point key="canvasLocation" x="189" y="228"/>
+            <point key="canvasLocation" x="6" y="2"/>
         </collectionViewCell>
     </objects>
     <resources>

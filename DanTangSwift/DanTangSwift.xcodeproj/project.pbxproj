@@ -18,6 +18,8 @@
 		2351852D1FDE68040019B2C4 /* UIViewExtentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351852C1FDE68040019B2C4 /* UIViewExtentsion.swift */; };
 		235185321FDE71620019B2C4 /* constFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235185311FDE71620019B2C4 /* constFile.swift */; };
 		235185341FDE78190019B2C4 /* ChannelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235185331FDE78190019B2C4 /* ChannelsModel.swift */; };
+		23C0FE781FE0BD1C00594C72 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0FE771FE0BD1C00594C72 /* ProductDetailViewController.swift */; };
+		23C0FE7A1FE0C1C000594C72 /* ProductTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0FE791FE0C1C000594C72 /* ProductTopView.swift */; };
 		23C81EA41FDE3FEC008B0959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C81EA31FDE3FEC008B0959 /* AppDelegate.swift */; };
 		23C81EAC1FDE3FEC008B0959 /* DanTangSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23C81EAA1FDE3FEC008B0959 /* DanTangSwift.xcdatamodeld */; };
 		23C81EAE1FDE3FEC008B0959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C81EAD1FDE3FEC008B0959 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		2351852C1FDE68040019B2C4 /* UIViewExtentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtentsion.swift; sourceTree = "<group>"; };
 		235185311FDE71620019B2C4 /* constFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constFile.swift; sourceTree = "<group>"; };
 		235185331FDE78190019B2C4 /* ChannelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsModel.swift; sourceTree = "<group>"; };
+		23C0FE771FE0BD1C00594C72 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		23C0FE791FE0C1C000594C72 /* ProductTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopView.swift; sourceTree = "<group>"; };
 		23C81EA01FDE3FEC008B0959 /* DanTangSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanTangSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C81EA31FDE3FEC008B0959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23C81EAB1FDE3FEC008B0959 /* DanTangSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DanTangSwift.xcdatamodel; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			children = (
 				23CF01501FDFDA9000180934 /* ProductCell.swift */,
 				23CF01511FDFDA9000180934 /* ProductCell.xib */,
+				23C0FE791FE0C1C000594C72 /* ProductTopView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				235185201FDE45AF0019B2C4 /* ProductViewController.swift */,
+				23C0FE771FE0BD1C00594C72 /* ProductDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -479,10 +485,12 @@
 				23CF01551FDFDCB100180934 /* ProductModel.swift in Sources */,
 				235185341FDE78190019B2C4 /* ChannelsModel.swift in Sources */,
 				2351850D1FDE43DA0019B2C4 /* MainTabBarController.swift in Sources */,
+				23C0FE7A1FE0C1C000594C72 /* ProductTopView.swift in Sources */,
 				23CF014F1FDFC46700180934 /* HomeDetailViewController.swift in Sources */,
 				23CF014C1FDFA8E000180934 /* ItemsCell.swift in Sources */,
 				2351852D1FDE68040019B2C4 /* UIViewExtentsion.swift in Sources */,
 				23CF01521FDFDA9000180934 /* ProductCell.swift in Sources */,
+				23C0FE781FE0BD1C00594C72 /* ProductDetailViewController.swift in Sources */,
 				2351851D1FDE45930019B2C4 /* PersonageViewController.swift in Sources */,
 				2351851B1FDE45800019B2C4 /* HomeViewController.swift in Sources */,
 			);
