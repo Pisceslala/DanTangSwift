@@ -17,12 +17,15 @@ class ProductModel: NSObject {
     @objc var price           : String = ""
     @objc var purchase_url    : String = ""
     @objc var url             : String = ""
-
-    init(dict : [String : Any]) {
+    @objc var dec             : String = ""
+     init(dict : [String : Any]) {
         super.init()
+        
         setValuesForKeys(dict)
     }
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        
+        if key == "description" {
+            dec = (value)! as! String
+        }
     }
 }

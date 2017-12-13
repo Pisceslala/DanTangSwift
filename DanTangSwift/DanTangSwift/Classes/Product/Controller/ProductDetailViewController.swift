@@ -12,14 +12,20 @@ class ProductDetailViewController: UIViewController {
     
     var productModel : ProductModel? {
         didSet {
-            topImagesView.imageArray = productModel?.image_urls
+            topImagesView.model = productModel
+            bottomView.model = productModel
         }
     }
     
 
     lazy var topImagesView: ProductTopView = {
-        let topImagesView = ProductTopView(frame: CGRect(x: 0, y: 0, width: SSScreenW, height: 375))
+        let topImagesView = ProductTopView(frame: CGRect(x: 0, y: 0, width: SSScreenW, height: 550))
         return topImagesView
+    }()
+    
+    lazy var bottomView: ProductMainBottomView = {
+        let bottomView = ProductMainBottomView(frame: CGRect(x: 0, y: topImagesView.frame.maxY, width: SSScreenW, height: view.height - 45))
+        return bottomView
     }()
     
     override func viewDidLoad() {
@@ -38,6 +44,7 @@ extension ProductDetailViewController {
         view.backgroundColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "GiftShare_icon_18x22_"), style: .plain, target: self, action: #selector(didClickShareBtn))
         view.addSubview(topImagesView)
+        view.addSubview(bottomView)
     }
 }
 

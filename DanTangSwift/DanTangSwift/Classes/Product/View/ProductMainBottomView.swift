@@ -1,0 +1,115 @@
+//
+//  ProductMainBottomView.swift
+//  DanTangSwift
+//
+//  Created by Pisces on 2017/12/13.
+//  Copyright © 2017年 Pisces. All rights reserved.
+//
+
+import UIKit
+
+class ProductMainBottomView: UIView {
+    
+    var model : ProductModel? {
+        didSet {
+            guard let proID = model?.id else {return}
+            loadWebDataByProductID(proID)
+            loadCommentDataByProductID(proID)
+        }
+    }
+    
+    
+    lazy var choseView: ProductBottomView = {
+        let choseView = ProductBottomView.showProductBottomView()
+        choseView?.frame = CGRect(x: 0, y: 0, width: SSScreenW, height: 35)
+        return choseView!
+    }()
+    
+    lazy var webView: UIWebView = {[weak self] in
+        let webView = UIWebView(frame: CGRect(x: 0, y: choseView.frame.maxY, width: SSScreenW, height: (self?.height)! - 45))
+        webView.scalesPageToFit = true
+        webView.dataDetectorTypes = .all
+        webView.delegate = self
+        return webView
+    }()
+    
+    lazy var commectTableView: UITableView = {
+        let tableView = UITableView(frame: webView.frame, style: .plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.isHidden = true
+        return tableView
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+
+extension ProductMainBottomView {
+    private func setUI() {
+        self.addSubview(choseView)
+        self.addSubview(webView)
+        self.addSubview(commectTableView)
+    }
+}
+
+
+extension ProductMainBottomView {
+    private func loadWebDataByProductID(_ productId : Int) {
+        let url = "\(BaseURL)v2/items/\(productId)"
+        NetwordTools.requestData(URLString: url, parameter: nil, method: .get) { (dataResponse : Any) in
+            guard let response = dataResponse as? [String : Any] else {return}
+            guard let data = response["data"] as? [String : Any] else {return}
+            guard let urlStr = data["detail_html"] as? String else {return}
+            self.webView.loadHTMLString(urlStr, baseURL: nil)
+            
+            guard let commentCount = data["comments_count"] as? Int else {return}
+            let str = "评论(\(commentCount))"
+            self.choseView.commentBtn.setTitle(str, for: .normal)
+            print((self.choseView.commentBtn.titleLabel?.text)!)
+        }
+    }
+    
+    private func loadCommentDataByProductID(_ productId : Int) {
+        let url = "\(BaseURL)v2/items/\(productId)/comments"
+        NetwordTools.requestData(URLString: url, parameter: nil, method: .get) { (dataResponse : Any) in
+            
+        }
+    }
+}
+
+
+extension ProductMainBottomView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        return cell
+    }
+}
+
+extension ProductMainBottomView : UIWebViewDelegate {
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        print("加载成功")
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        print("加载失败")
+    }
+}
