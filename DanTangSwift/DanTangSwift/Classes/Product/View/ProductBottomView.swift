@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol ProductBottomViewDelegate : NSObjectProtocol {
+    func productBottomViewDidClickIntroduceBtn()
+    func productBottomViewDidClickcommentariesBtn()
+}
+
 class ProductBottomView: UIView {
 
+    weak var delegate : ProductBottomViewDelegate?
+    
     @IBOutlet weak var bottomLine: UIView!
     
     @IBOutlet weak var introduceBtn: UIButton!
@@ -29,15 +36,22 @@ extension ProductBottomView {
         UIView.animate(withDuration: 0.2) {
             self.bottomLine.x = 0
         }
+        
+        guard let delegate = delegate else {return}
+        delegate.productBottomViewDidClickIntroduceBtn()
     }
     
     //MARK: - 评论
     @IBAction func commentaries(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2) {
-            let btn = sender 
-            
+            let btn = sender
             self.bottomLine.x = btn.x
         }
+        guard let delegate = delegate else {
+            return
+        }
+        
+        delegate.productBottomViewDidClickcommentariesBtn()
     }
 }
 

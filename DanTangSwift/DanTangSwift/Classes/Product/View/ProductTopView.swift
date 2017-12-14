@@ -27,6 +27,7 @@ class ProductTopView: UIView {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SSScreenW, height: 375))
         scrollView.delegate        = self
         scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
     

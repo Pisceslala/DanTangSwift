@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol TitleViewDelegate {
+protocol TitleViewDelegate : NSObjectProtocol {
     func titleViewDidClickTitleBtn(index : Int)
 }
 
 class TitileView: UIView {
 
-    var delegate  : TitleViewDelegate?
+    weak var delegate  : TitleViewDelegate?
 
     var selectBtn : UIButton = UIButton()
     

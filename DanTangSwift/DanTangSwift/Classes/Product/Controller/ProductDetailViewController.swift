@@ -18,21 +18,29 @@ class ProductDetailViewController: UIViewController {
     
 
     lazy var scrollView: UIScrollView = {
+        let barHeight = (navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SSScreenW, height: view.height))
-        scrollView.contentSize = CGSize(width: 0, height: 550 + view.height - 90 - 35)
-        scrollView.delegate    = self
+        scrollView.contentSize = CGSize(width: 0, height: 545 + view.height - barHeight - 35)
         return scrollView
     }()
     
     lazy var topImagesView: ProductTopView = {
-        let topImagesView = ProductTopView(frame: CGRect(x: 0, y: 0, width: SSScreenW, height: 550))
+        let topImagesView = ProductTopView(frame: CGRect(x: 0, y: 0, width: SSScreenW, height: 545))
         return topImagesView
     }()
     
     lazy var bottomView: ProductMainBottomView = {
-        let bottomView = ProductMainBottomView(frame: CGRect(x: 0, y: topImagesView.frame.maxY, width: SSScreenW, height: view.height - 45 - 35 - 45))
+        let barHeight = (navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height
+        let bottomView = ProductMainBottomView(frame: CGRect(x: 0, y: topImagesView.frame.maxY, width: SSScreenW, height: view.height - barHeight - 35))
         bottomView.model = productModel
         return bottomView
+    }()
+    
+    lazy var toolBar: ProductToolsView = {
+        let toolBar = ProductToolsView.showProductToolsView()
+        toolBar?.frame = CGRect(x: 0, y: SSScreenH - 45, width: SSScreenW, height: 45)
+        toolBar?.delegate = self
+        return toolBar!
     }()
     
     override func viewDidLoad() {
@@ -52,11 +60,20 @@ extension ProductDetailViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(topImagesView)
         scrollView.addSubview(bottomView)
+        view.addSubview(toolBar)
     }
 }
 
-extension ProductDetailViewController : UIScrollViewDelegate {
+extension ProductDetailViewController : ProductToolsViewDelegate {
+    func productToolsViewDidClickLikeBtn() {
+        
+    }
     
+    func productToolsViewDidClickGotoTinCatBtn() {
+        let TMVC = ProductTMViewController()
+        TMVC.TMURL = self.productModel?.purchase_url
+        navigationController?.pushViewController(TMVC, animated: true)
+    }
 }
 
 //MARK: - 监听点击

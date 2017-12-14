@@ -18,13 +18,14 @@ class ProductMainBottomView: UIView {
         }
     }
     
-    var commentArray : [String] = [String]()
+    var commentArray : [CommentModel] = [CommentModel]()
     
     
     
     lazy var choseView: ProductBottomView = {[weak self] in
         let choseView = ProductBottomView.showProductBottomView()
         choseView?.frame = CGRect(x: 0, y: 0, width: SSScreenW, height: 35)
+        choseView?.delegate = self
         return choseView!
     }()
     
@@ -41,6 +42,8 @@ class ProductMainBottomView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = true
+        tableView.register(UINib.init(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 64
         return tableView
     }()
 
@@ -84,7 +87,15 @@ extension ProductMainBottomView {
     private func loadCommentDataByProductID(_ productId : Int) {
         let url = "\(BaseURL)v2/items/\(productId)/comments"
         NetwordTools.requestData(URLString: url, parameter: nil, method: .get) { (dataResponse : Any) in
+            guard let response = dataResponse as? [String : Any] else {return}
+            guard let data = response["data"] as? [String : Any] else {return}
+            guard let comments = data["comments"] as? [[String : Any]] else {return}
             
+            for dict in comments {
+                self.commentArray.append(CommentModel.init(dict: dict))
+            }
+            
+            self.commectTableView.reloadData()
         }
     }
 }
@@ -92,12 +103,12 @@ extension ProductMainBottomView {
 
 extension ProductMainBottomView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return commentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CommentCell
+        cell.model = commentArray[indexPath.row]
         return cell
     }
 }
@@ -114,5 +125,17 @@ extension ProductMainBottomView : UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         print("加载失败")
+    }
+}
+
+extension ProductMainBottomView : ProductBottomViewDelegate {
+    func productBottomViewDidClickIntroduceBtn() {
+        commectTableView.isHidden = true
+        webView.isHidden = false
+    }
+    
+    func productBottomViewDidClickcommentariesBtn() {
+        webView.isHidden = true
+        commectTableView.isHidden = false
     }
 }

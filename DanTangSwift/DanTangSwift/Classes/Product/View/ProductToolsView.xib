@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="ProductToolsView" customModule="DanTangSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdV-FL-ONH">
+                    <rect key="frame" x="15" y="5.5" width="100" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="trH-eT-rUI"/>
+                        <constraint firstAttribute="height" constant="35" id="x4G-SQ-7Kc"/>
+                    </constraints>
+                    <state key="normal" title="喜欢" image="content-details_like_16x16_">
+                        <color key="titleColor" red="1" green="0.33650435880000001" blue="0.19546551670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didClickLikeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Saz-Pu-lA1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17v-Pc-jYr">
+                    <rect key="frame" x="133" y="5.5" width="227" height="35"/>
+                    <color key="backgroundColor" red="1" green="0.33650435880000001" blue="0.19546551670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="去天猫购买">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didClickGotoTinCatBrn:" destination="iN0-l3-epB" eventType="touchUpInside" id="c0I-Mv-Sqi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="17v-Pc-jYr" secondAttribute="trailing" constant="15" id="Adu-h8-e9S"/>
+                <constraint firstItem="17v-Pc-jYr" firstAttribute="height" secondItem="YdV-FL-ONH" secondAttribute="height" id="PDb-2C-Ub9"/>
+                <constraint firstItem="17v-Pc-jYr" firstAttribute="centerY" secondItem="YdV-FL-ONH" secondAttribute="centerY" id="QE1-rc-W0f"/>
+                <constraint firstItem="17v-Pc-jYr" firstAttribute="leading" secondItem="YdV-FL-ONH" secondAttribute="trailing" constant="18" id="Xsb-g0-y0R"/>
+                <constraint firstItem="YdV-FL-ONH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="sXr-hq-uJo"/>
+                <constraint firstItem="YdV-FL-ONH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="wXg-S7-jHO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="GotoTinCatBtn" destination="17v-Pc-jYr" id="h2G-4H-Lj0"/>
+                <outlet property="likeBtn" destination="YdV-FL-ONH" id="DJx-Sd-bzB"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="content-details_like_16x16_" width="16" height="16"/>
+    </resources>
+</document>

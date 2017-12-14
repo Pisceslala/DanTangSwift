@@ -19,6 +19,11 @@
 		2351852D1FDE68040019B2C4 /* UIViewExtentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351852C1FDE68040019B2C4 /* UIViewExtentsion.swift */; };
 		235185321FDE71620019B2C4 /* constFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235185311FDE71620019B2C4 /* constFile.swift */; };
 		235185341FDE78190019B2C4 /* ChannelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235185331FDE78190019B2C4 /* ChannelsModel.swift */; };
+		23B434031FE213DF00F5A5ED /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B434011FE213DF00F5A5ED /* CommentCell.swift */; };
+		23B434041FE213DF00F5A5ED /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23B434021FE213DF00F5A5ED /* CommentCell.xib */; };
+		23B434061FE22C7000F5A5ED /* ProductToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B434051FE22C7000F5A5ED /* ProductToolsView.swift */; };
+		23B434081FE22C8100F5A5ED /* ProductToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23B434071FE22C8100F5A5ED /* ProductToolsView.xib */; };
+		23B4340A1FE24F8000F5A5ED /* ProductTMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B434091FE24F8000F5A5ED /* ProductTMViewController.swift */; };
 		23C0FE781FE0BD1C00594C72 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0FE771FE0BD1C00594C72 /* ProductDetailViewController.swift */; };
 		23C0FE7A1FE0C1C000594C72 /* ProductTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0FE791FE0C1C000594C72 /* ProductTopView.swift */; };
 		23C0FE7C1FE0DF9F00594C72 /* ProductBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0FE7B1FE0DF9F00594C72 /* ProductBottomView.swift */; };
@@ -52,6 +57,11 @@
 		2351852C1FDE68040019B2C4 /* UIViewExtentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtentsion.swift; sourceTree = "<group>"; };
 		235185311FDE71620019B2C4 /* constFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constFile.swift; sourceTree = "<group>"; };
 		235185331FDE78190019B2C4 /* ChannelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsModel.swift; sourceTree = "<group>"; };
+		23B434011FE213DF00F5A5ED /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		23B434021FE213DF00F5A5ED /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		23B434051FE22C7000F5A5ED /* ProductToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductToolsView.swift; sourceTree = "<group>"; };
+		23B434071FE22C8100F5A5ED /* ProductToolsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductToolsView.xib; sourceTree = "<group>"; };
+		23B434091FE24F8000F5A5ED /* ProductTMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTMViewController.swift; sourceTree = "<group>"; };
 		23C0FE771FE0BD1C00594C72 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		23C0FE791FE0C1C000594C72 /* ProductTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTopView.swift; sourceTree = "<group>"; };
 		23C0FE7B1FE0DF9F00594C72 /* ProductBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBottomView.swift; sourceTree = "<group>"; };
@@ -174,10 +184,14 @@
 			children = (
 				23CF01501FDFDA9000180934 /* ProductCell.swift */,
 				23CF01511FDFDA9000180934 /* ProductCell.xib */,
+				23B434011FE213DF00F5A5ED /* CommentCell.swift */,
+				23B434021FE213DF00F5A5ED /* CommentCell.xib */,
 				23C0FE791FE0C1C000594C72 /* ProductTopView.swift */,
 				23C0FE7B1FE0DF9F00594C72 /* ProductBottomView.swift */,
 				23C0FE7D1FE0DFB700594C72 /* ProductBottomView.xib */,
 				23C0FE7F1FE0FC6E00594C72 /* ProductMainBottomView.swift */,
+				23B434051FE22C7000F5A5ED /* ProductToolsView.swift */,
+				23B434071FE22C8100F5A5ED /* ProductToolsView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +210,7 @@
 			children = (
 				235185201FDE45AF0019B2C4 /* ProductViewController.swift */,
 				23C0FE771FE0BD1C00594C72 /* ProductDetailViewController.swift */,
+				23B434091FE24F8000F5A5ED /* ProductTMViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -425,8 +440,10 @@
 				23C81EB11FDE3FEC008B0959 /* LaunchScreen.storyboard in Resources */,
 				23CF01531FDFDA9000180934 /* ProductCell.xib in Resources */,
 				23C81EAE1FDE3FEC008B0959 /* Assets.xcassets in Resources */,
+				23B434041FE213DF00F5A5ED /* CommentCell.xib in Resources */,
 				23CF014D1FDFA8E000180934 /* ItemsCell.xib in Resources */,
 				23C0FE7E1FE0DFB700594C72 /* ProductBottomView.xib in Resources */,
+				23B434081FE22C8100F5A5ED /* ProductToolsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +504,11 @@
 			files = (
 				235185281FDE5F910019B2C4 /* MainNavigationController.swift in Sources */,
 				232C35481FE131F100EE31C3 /* CommentModel.swift in Sources */,
+				23B4340A1FE24F8000F5A5ED /* ProductTMViewController.swift in Sources */,
 				23C81EAC1FDE3FEC008B0959 /* DanTangSwift.xcdatamodeld in Sources */,
 				235185251FDE59440019B2C4 /* NetwordTools.swift in Sources */,
 				23C81EA41FDE3FEC008B0959 /* AppDelegate.swift in Sources */,
+				23B434031FE213DF00F5A5ED /* CommentCell.swift in Sources */,
 				23CF01471FDF8B7A00180934 /* HomeChannelsViewController.swift in Sources */,
 				23CF01491FDF942800180934 /* ChannelsListModel.swift in Sources */,
 				23CF01451FDF66B700180934 /* TitileView.swift in Sources */,
@@ -500,6 +519,7 @@
 				235185341FDE78190019B2C4 /* ChannelsModel.swift in Sources */,
 				2351850D1FDE43DA0019B2C4 /* MainTabBarController.swift in Sources */,
 				23C0FE7A1FE0C1C000594C72 /* ProductTopView.swift in Sources */,
+				23B434061FE22C7000F5A5ED /* ProductToolsView.swift in Sources */,
 				23CF014F1FDFC46700180934 /* HomeDetailViewController.swift in Sources */,
 				23C0FE801FE0FC6E00594C72 /* ProductMainBottomView.swift in Sources */,
 				23CF014C1FDFA8E000180934 /* ItemsCell.swift in Sources */,
