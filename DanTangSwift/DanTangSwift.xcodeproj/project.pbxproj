@@ -45,6 +45,7 @@
 		23C846001FE79B7400377EA1 /* SeeAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C845FE1FE79B7400377EA1 /* SeeAllCell.swift */; };
 		23C846011FE79B7400377EA1 /* SeeAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23C845FF1FE79B7400377EA1 /* SeeAllCell.xib */; };
 		23C846031FE7A37E00377EA1 /* ClassifyDeitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C846021FE7A37E00377EA1 /* ClassifyDeitalViewController.swift */; };
+		23C846051FE7B9F800377EA1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C846041FE7B9F800377EA1 /* HeaderView.swift */; };
 		23CF01451FDF66B700180934 /* TitileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF01441FDF66B700180934 /* TitileView.swift */; };
 		23CF01471FDF8B7A00180934 /* HomeChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF01461FDF8B7A00180934 /* HomeChannelsViewController.swift */; };
 		23CF01491FDF942800180934 /* ChannelsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF01481FDF942800180934 /* ChannelsListModel.swift */; };
@@ -97,6 +98,7 @@
 		23C845FE1FE79B7400377EA1 /* SeeAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllCell.swift; sourceTree = "<group>"; };
 		23C845FF1FE79B7400377EA1 /* SeeAllCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeAllCell.xib; sourceTree = "<group>"; };
 		23C846021FE7A37E00377EA1 /* ClassifyDeitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyDeitalViewController.swift; sourceTree = "<group>"; };
+		23C846041FE7B9F800377EA1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		23CF01441FDF66B700180934 /* TitileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitileView.swift; sourceTree = "<group>"; };
 		23CF01461FDF8B7A00180934 /* HomeChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChannelsViewController.swift; sourceTree = "<group>"; };
 		23CF01481FDF942800180934 /* ChannelsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsListModel.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		235185111FDE452D0019B2C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				23C846041FE7B9F800377EA1 /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				23C846001FE79B7400377EA1 /* SeeAllCell.swift in Sources */,
 				23B4340A1FE24F8000F5A5ED /* ProductTMViewController.swift in Sources */,
 				23C81EAC1FDE3FEC008B0959 /* DanTangSwift.xcdatamodeld in Sources */,
+				23C846051FE7B9F800377EA1 /* HeaderView.swift in Sources */,
 				235185251FDE59440019B2C4 /* NetwordTools.swift in Sources */,
 				23C81EA41FDE3FEC008B0959 /* AppDelegate.swift in Sources */,
 				23B434031FE213DF00F5A5ED /* CommentCell.swift in Sources */,
