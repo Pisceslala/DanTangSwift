@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol ThemeCellDelegate:NSObjectProtocol {
+    func ThemeCellDidClickAllBtn();
+    func ThemeCellDidClickCollectionViewCell(_ model : ClassThemeModel)
+}
+
 class ThemeCell: UITableViewCell {
+    
+    weak var delegate : ThemeCellDelegate?
 
     var dataArray : [ClassThemeModel]? {
         didSet {
@@ -89,12 +96,13 @@ extension ThemeCell : UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let model = dataArray?[indexPath.row]
+        delegate?.ThemeCellDidClickCollectionViewCell(model!)
     }
 }
 
 extension ThemeCell {
     @objc func didClickSeeMoreBtn() {
-       
+       delegate?.ThemeCellDidClickAllBtn()
     }
 }

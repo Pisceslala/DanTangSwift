@@ -13,7 +13,7 @@ class ClassThemeModel: NSObject {
     @objc var cover_image_url : String = ""
     @objc var subtitle : String = ""
     @objc var title : String = ""
-    
+    @objc var id : Int = 0
     init(dict : [String : Any]) {
         super.init()
         setValuesForKeys(dict)

@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol CategoryCellDelegate : NSObjectProtocol {
+    func CategoryCellDidClickCollectionViewCell(_ model : GroundModel)
+}
+
 class CategoryCell: UITableViewCell {
+    
+    weak var delegate : CategoryCellDelegate?
     
     var dataArray : [GroundModel]? {
         didSet {
@@ -78,5 +84,10 @@ extension CategoryCell : UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoryCollectionViewCell
         cell.model = dataArray?[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = dataArray?[indexPath.row]
+        delegate?.CategoryCellDidClickCollectionViewCell(model!)
     }
 }
