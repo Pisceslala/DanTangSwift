@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		1A675DE6DA492737EAE03081 /* Pods_DanTangSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681AE39EBD8E32D42996EF62 /* Pods_DanTangSwift.framework */; };
 		232C35481FE131F100EE31C3 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232C35471FE131F100EE31C3 /* CommentModel.swift */; };
+		232E74DC1FE25C1C00FAC3BA /* ClassThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E74DB1FE25C1C00FAC3BA /* ClassThemeModel.swift */; };
+		232E74DE1FE2608D00FAC3BA /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E74DD1FE2608D00FAC3BA /* ThemeCell.swift */; };
+		232E74E11FE26BBB00FAC3BA /* ThemeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E74DF1FE26BBB00FAC3BA /* ThemeCollectionCell.swift */; };
+		232E74E21FE26BBB00FAC3BA /* ThemeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232E74E01FE26BBB00FAC3BA /* ThemeCollectionCell.xib */; };
+		232E74E41FE2749600FAC3BA /* GroundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E74E31FE2749600FAC3BA /* GroundModel.swift */; };
+		232E74E61FE27BCD00FAC3BA /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E74E51FE27BCD00FAC3BA /* CategoryCell.swift */; };
+		232E74E91FE27F9B00FAC3BA /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E74E71FE27F9B00FAC3BA /* CategoryCollectionViewCell.swift */; };
+		232E74EA1FE27F9B00FAC3BA /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232E74E81FE27F9B00FAC3BA /* CategoryCollectionViewCell.xib */; };
 		2351850D1FDE43DA0019B2C4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351850C1FDE43DA0019B2C4 /* MainTabBarController.swift */; };
 		2351851B1FDE45800019B2C4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351851A1FDE45800019B2C4 /* HomeViewController.swift */; };
 		2351851D1FDE45930019B2C4 /* PersonageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351851C1FDE45930019B2C4 /* PersonageViewController.swift */; };
@@ -47,6 +55,14 @@
 /* Begin PBXFileReference section */
 		2286C8C0DAA8304BFAA93401 /* Pods-DanTangSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanTangSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DanTangSwift/Pods-DanTangSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		232C35471FE131F100EE31C3 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		232E74DB1FE25C1C00FAC3BA /* ClassThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassThemeModel.swift; sourceTree = "<group>"; };
+		232E74DD1FE2608D00FAC3BA /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		232E74DF1FE26BBB00FAC3BA /* ThemeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionCell.swift; sourceTree = "<group>"; };
+		232E74E01FE26BBB00FAC3BA /* ThemeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCollectionCell.xib; sourceTree = "<group>"; };
+		232E74E31FE2749600FAC3BA /* GroundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundModel.swift; sourceTree = "<group>"; };
+		232E74E51FE27BCD00FAC3BA /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		232E74E71FE27F9B00FAC3BA /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		232E74E81FE27F9B00FAC3BA /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		2351850C1FDE43DA0019B2C4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2351851A1FDE45800019B2C4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2351851C1FDE45930019B2C4 /* PersonageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonageViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +176,12 @@
 		235185141FDE45430019B2C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				232E74DD1FE2608D00FAC3BA /* ThemeCell.swift */,
+				232E74DF1FE26BBB00FAC3BA /* ThemeCollectionCell.swift */,
+				232E74E01FE26BBB00FAC3BA /* ThemeCollectionCell.xib */,
+				232E74E51FE27BCD00FAC3BA /* CategoryCell.swift */,
+				232E74E71FE27F9B00FAC3BA /* CategoryCollectionViewCell.swift */,
+				232E74E81FE27F9B00FAC3BA /* CategoryCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +189,8 @@
 		235185151FDE454F0019B2C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				232E74DB1FE25C1C00FAC3BA /* ClassThemeModel.swift */,
+				232E74E31FE2749600FAC3BA /* GroundModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -443,7 +467,9 @@
 				23B434041FE213DF00F5A5ED /* CommentCell.xib in Resources */,
 				23CF014D1FDFA8E000180934 /* ItemsCell.xib in Resources */,
 				23C0FE7E1FE0DFB700594C72 /* ProductBottomView.xib in Resources */,
+				232E74EA1FE27F9B00FAC3BA /* CategoryCollectionViewCell.xib in Resources */,
 				23B434081FE22C8100F5A5ED /* ProductToolsView.xib in Resources */,
+				232E74E21FE26BBB00FAC3BA /* ThemeCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,14 +535,19 @@
 				235185251FDE59440019B2C4 /* NetwordTools.swift in Sources */,
 				23C81EA41FDE3FEC008B0959 /* AppDelegate.swift in Sources */,
 				23B434031FE213DF00F5A5ED /* CommentCell.swift in Sources */,
+				232E74E41FE2749600FAC3BA /* GroundModel.swift in Sources */,
 				23CF01471FDF8B7A00180934 /* HomeChannelsViewController.swift in Sources */,
 				23CF01491FDF942800180934 /* ChannelsListModel.swift in Sources */,
 				23CF01451FDF66B700180934 /* TitileView.swift in Sources */,
+				232E74E61FE27BCD00FAC3BA /* CategoryCell.swift in Sources */,
 				235185321FDE71620019B2C4 /* constFile.swift in Sources */,
 				2351851F1FDE45A10019B2C4 /* ClassifyViewController.swift in Sources */,
 				235185211FDE45AF0019B2C4 /* ProductViewController.swift in Sources */,
 				23CF01551FDFDCB100180934 /* ProductModel.swift in Sources */,
+				232E74DC1FE25C1C00FAC3BA /* ClassThemeModel.swift in Sources */,
+				232E74DE1FE2608D00FAC3BA /* ThemeCell.swift in Sources */,
 				235185341FDE78190019B2C4 /* ChannelsModel.swift in Sources */,
+				232E74E91FE27F9B00FAC3BA /* CategoryCollectionViewCell.swift in Sources */,
 				2351850D1FDE43DA0019B2C4 /* MainTabBarController.swift in Sources */,
 				23C0FE7A1FE0C1C000594C72 /* ProductTopView.swift in Sources */,
 				23B434061FE22C7000F5A5ED /* ProductToolsView.swift in Sources */,
@@ -525,6 +556,7 @@
 				23CF014C1FDFA8E000180934 /* ItemsCell.swift in Sources */,
 				2351852D1FDE68040019B2C4 /* UIViewExtentsion.swift in Sources */,
 				23CF01521FDFDA9000180934 /* ProductCell.swift in Sources */,
+				232E74E11FE26BBB00FAC3BA /* ThemeCollectionCell.swift in Sources */,
 				23C0FE781FE0BD1C00594C72 /* ProductDetailViewController.swift in Sources */,
 				23C0FE7C1FE0DF9F00594C72 /* ProductBottomView.swift in Sources */,
 				2351851D1FDE45930019B2C4 /* PersonageViewController.swift in Sources */,
